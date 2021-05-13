@@ -152,6 +152,21 @@ namespace TruyumDAL
 
         }
 
-       
+        public void RemoveMenuItem(int menuItem)
+        {
+            SqlConnection sqlConnection = ConnectionHandler.GetConnection();
+            using (sqlConnection)
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("T_RemoveMenuListItem", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@id", menuItem);
+              
+                sqlCommand.ExecuteNonQuery();
+            }
+
+        }
+
+
     }
 }

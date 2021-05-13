@@ -11,32 +11,40 @@ namespace TruyumConsoleApp
     {
         static void Main(string[] args)
         {
-           // MenuItemDaoCollectionBL menuItemDaoCollectionTest = new MenuItemDaoCollectionBL();
-            MenuItemDaoSqlBL menuItemDaoSqlBL = new MenuItemDaoSqlBL();
-            menuItemDaoSqlBL.TestGetMenuItemListAdmin(); //done
-            menuItemDaoSqlBL.TestGetMenuItemListCustomer();//done
-            menuItemDaoSqlBL.TestGetMenuItem();//done
-            menuItemDaoSqlBL.TestAddMenuItem();//done
-            menuItemDaoSqlBL.TestEditMenuItem();
+            //menu function
+            //MenuItemDaoSqlBL menuItemDaoSqlBL = new MenuItemDaoSqlBL();
+            //Console.WriteLine("Get MENU items ADMIN");
+            //menuItemDaoSqlBL.TestGetMenuItemListAdmin(); //done
+            //Console.WriteLine("Get MENU items CUstomer");
+            //menuItemDaoSqlBL.TestGetMenuItemListCustomer();//done
+            //Console.WriteLine("Get menu item ");
+            //menuItemDaoSqlBL.TestGetMenuItem();//done
+            //Console.WriteLine("Add menu items");
+            //menuItemDaoSqlBL.TestAddMenuItem();//done
+            //Console.WriteLine("Edit menu items");
+            //menuItemDaoSqlBL.TestEditMenuItem();
+            //Console.WriteLine("Remove menu item.");
+            //menuItemDaoSqlBL.TestRemoveMenuItem();
 
-
-            Console.WriteLine("1 object done.");
-            Console.ReadKey();
-           // CartDaoCollectionBL cartDaoCollectionTest = new CartDaoCollectionBL();
+            
+           //cart function
             CartDaoSqlBL cartDaoSqlBL = new CartDaoSqlBL();
-            cartDaoSqlBL.TestAddCartItem();
-           // cartDaoSqlBL.TestGetMenuItems();
-           // cartDaoSqlBL.TestRemoveCartItem();
+           // cartDaoSqlBL.TestAddCartItem();
 
-            //Console.WriteLine("2 objects done.");
+           
+           Console.WriteLine("Enter userid:");
+           int userid = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Enter menuid:");
+            int menuid = int.Parse(Console.ReadLine());
+
+            cartDaoSqlBL.TestAddCartItem(userid,menuid);
+
+            //cartDaoSqlBL.TestGetCartItems();
+            //cartDaoSqlBL.TestRemoveCartItem();
+
+            Console.ReadKey();
           
-            //CartDaoSqlBL cartDaoSqlTest = new CartDaoSqlBL();
-            //cartDaoSqlTest.TestAddMenuItem();
-            //cartDaoSqlTest.TestGetMenuItems();
-            //cartDaoSqlTest.TestRemoveMenuItem();
-
-            //Console.WriteLine("4 objects done.");
         }
     }
 }

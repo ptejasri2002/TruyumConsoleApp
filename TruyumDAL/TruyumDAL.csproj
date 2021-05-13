@@ -42,14 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartDaoCollection.cs" />
     <Compile Include="CartDaoSql.cs" />
-    <Compile Include="CartEmptyException.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ConnectionHandler.cs" />
     <Compile Include="ICartDao.cs" />
     <Compile Include="IMenuItemDao.cs" />
-    <Compile Include="MenuItemDaoCollection.cs" />
     <Compile Include="MenuItemDaoSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

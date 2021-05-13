@@ -50,7 +50,14 @@ namespace TruyumBL
             menuItemDaoSql.AddMenuItem(new MenuItem(7, "Biriyani",
                 200, true, DateTime.Now, "Starters", true));
             TestGetMenuItem();
-        }       
+        }
+
+        public void TestRemoveMenuItem()
+        {
+            MenuItemDaoSql menuItemDaoSql = new MenuItemDaoSql();
+            menuItemDaoSql.RemoveMenuItem(2);
+            TestGetMenuItem();
+        }
 
     }
 }

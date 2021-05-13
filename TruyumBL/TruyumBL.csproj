@@ -41,10 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartDaoCollectionBL.cs" />
     <Compile Include="CartDaoSqlBL.cs" />
-    <Compile Include="DateUtility.cs" />
-    <Compile Include="MenuItemDaoCollectionBL.cs" />
     <Compile Include="MenuItemDaoSqlBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

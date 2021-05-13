@@ -15,11 +15,15 @@ namespace TruyumBL
             CartDaoSql cartDaoSql = new CartDaoSql();
             cartDaoSql.AddCartItem(1, 1);
         }
-
-        public void TestGetMenuItems()
+        public void TestAddCartItem(int userid,int menuid)
         {
             CartDaoSql cartDaoSql = new CartDaoSql();
-            foreach (var item in cartDaoSql.GetMenuItems(1))
+            cartDaoSql.AddCartItem(userid, menuid);
+        }
+        public void TestGetCartItems()
+        {
+            CartDaoSql cartDaoSql = new CartDaoSql();
+            foreach (var item in cartDaoSql.GetCartItems(1))
             {
                 Console.WriteLine(item);
             }            
