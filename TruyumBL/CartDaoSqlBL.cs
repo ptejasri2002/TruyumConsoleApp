@@ -23,10 +23,20 @@ namespace TruyumBL
         public void TestGetCartItems()
         {
             CartDaoSql cartDaoSql = new CartDaoSql();
-            foreach (var item in cartDaoSql.GetCartItems(1))
+            foreach (var item in cartDaoSql.GetCartItems(2))
             {
                 Console.WriteLine(item);
             }            
+
+        }
+
+        public void TestGetCartItems(int userid)
+        {
+            CartDaoSql cartDaoSql = new CartDaoSql();
+            foreach (var item in cartDaoSql.GetCartItems(userid))
+            {
+                Console.WriteLine(item);
+            }
 
         }
 
@@ -35,6 +45,10 @@ namespace TruyumBL
             CartDaoSql cartDaoSql = new CartDaoSql();
             cartDaoSql.RemoveCartItem(1, 1);
         }
-
+        public void TestRemoveCartItem(int userid, int menuid )
+        {
+            CartDaoSql cartDaoSql = new CartDaoSql();
+            cartDaoSql.RemoveCartItem(userid , menuid );
+        }
     }
 }

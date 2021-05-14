@@ -32,6 +32,7 @@ namespace TruyumDAL
             {
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand("T_ViewCartList", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@userId", userId);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
 

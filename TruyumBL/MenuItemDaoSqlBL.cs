@@ -30,33 +30,47 @@ namespace TruyumBL
             }
         }
 
-        public void TestGetMenuItem()
+        public void TestGetMenuItem(int MId)
         {
             MenuItemDaoSql menuItemDaoSql = new MenuItemDaoSql();
-            Console.WriteLine(menuItemDaoSql.GetMenuItem(1));
+            Console.WriteLine(menuItemDaoSql.GetMenuItem(MId));
         }
 
-        public void TestEditMenuItem()
+        public void TestEditMenuItem(int iid2, string iname2, int iprice2,int ias2, DateTime idol2, string icategory2, int ids2)
         {
             MenuItemDaoSql menuItemDaoSql = new MenuItemDaoSql();
-            menuItemDaoSql.EditMenuItem(new MenuItem(1, "Basil Tomato & Mozzarella Cheese Sandwich",
-                235, true, DateTime.Today, "Main Course", true));
-            TestGetMenuItem();
+            MenuItem menu = new MenuItem();
+            menu.Id = iid2;
+            menu.Name = iname2;
+            menu.Price = iprice2;
+            menu.DateOfLaunch = idol2;
+            menu.Active = ias2 == 1 ? true : false;
+            menu.FreeDelivery = ids2 == 1 ? true : false;
+            menu.Category = icategory2;
+            menuItemDaoSql.EditMenuItem(menu);
+          //  TestGetMenuItem();
         }
 
-        public void TestAddMenuItem()
+        public void TestAddMenuItem(int iid,string iname,int iprice,int ias,DateTime idol,string icategory,int ids)
         {
             MenuItemDaoSql menuItemDaoSql = new MenuItemDaoSql();
-            menuItemDaoSql.AddMenuItem(new MenuItem(7, "Biriyani",
-                200, true, DateTime.Now, "Starters", true));
-            TestGetMenuItem();
+            MenuItem   menu = new MenuItem();
+            menu.Id = iid;
+            menu.Name = iname;
+            menu.Price = iprice;
+            menu.DateOfLaunch = idol;
+            menu.Active=ias==1 ?  true: false  ;
+            menu.FreeDelivery = ids == 1 ? true : false;
+            menu.Category = icategory;
+            menuItemDaoSql.AddMenuItem(menu);
+            //TestGetMenuItem();
         }
 
-        public void TestRemoveMenuItem()
+        public void TestRemoveMenuItem(int mid)
         {
             MenuItemDaoSql menuItemDaoSql = new MenuItemDaoSql();
-            menuItemDaoSql.RemoveMenuItem(2);
-            TestGetMenuItem();
+            menuItemDaoSql.RemoveMenuItem(mid);
+           // TestGetMenuItem();
         }
 
     }
